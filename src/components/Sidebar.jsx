@@ -26,7 +26,7 @@ const sidebarItems = [
 const Sidebar = () => {
   return (
     <Box>
-      <Drawer //By default, display:flex in col direction.
+      <Drawer
         variant="permanent"
         anchor="left"
         sx={{
@@ -48,11 +48,13 @@ const Sidebar = () => {
       >
         <Box>
           <Typography
+            variant="h5"
+            width={142}
+            fontFamily={"inherit"}
             fontStyle="normal"
             fontSize={28}
             fontWeight={700}
             lineHeight="36px"
-            textAlign="center"
             color="#ffffff"
             sx={{ margin: "40px 79px 32px" }}
           >
@@ -114,26 +116,39 @@ const Sidebar = () => {
         </Box>
 
         <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#02354F",
-            padding: "40px",
-            mx: "26px",
-            borderRadius: "4px",
-            gap: "8px",
-            color: "#EAEAEA",
-            mb: "59px",
-          }}
+          display="flex"
+          flexDirection={"column"}
+          alignItems={"center"}
+          width={248}
+          height={145}
+          padding={"40px"}
+          gap={"8px"}
+          backgroundColor="#02354F"
+          color="#EAEAEA"
+          borderRadius={"4px"}
+          margin={"0 26px 59px"}
         >
-          <Typography fontSize={28} fontWeight={500}>
+          {["1,650", "Total Credits Available"].map((value, index) => (
+            <Typography
+              variant="body2"
+              key={index}
+              width={index === 0 ? "69px" : "168px"}
+              fontFamily={"inherit"}
+              fontStyle={"normal"}
+              fontSize={index === 0 ? "28px" : "16px"}
+              lineHeight={index === 0 ? "36px" : "21px"}
+              letterSpacing={0}
+              fontWeight={500}
+            >
+              {value}
+            </Typography>
+          ))}
+          {/* <Typography fontSize={28} fontWeight={500}>
             1,650
           </Typography>
           <Typography fontSize={16} fontWeight={500}>
             Total Credits Available
-          </Typography>
+          </Typography> */}
         </Box>
       </Drawer>
     </Box>

@@ -15,8 +15,10 @@ function Header() {
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Box>
         <Typography
+          variant="h5"
           width={"162px"}
           height={"36px"}
+          fontFamily="inherit"
           fontStyle="normal"
           fontWeight={700}
           fontSize="28px"
@@ -53,7 +55,7 @@ function Header() {
             <ListItemText
               disableTypography
               sx={{
-                // fontFamily: "DM Sans",
+                fontFamily: ("DM Sans", "sans - serif"),
                 fontStyle: "normal",
                 fontWeight: "400",
                 fontSize: "16px",
