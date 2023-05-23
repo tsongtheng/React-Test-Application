@@ -16,8 +16,6 @@ function Header() {
       <Box>
         <Typography
           variant="h5"
-          width={"162px"}
-          height={"36px"}
           fontFamily="inherit"
           fontStyle="normal"
           fontWeight={700}
@@ -25,7 +23,8 @@ function Header() {
           lineHeight="36px"
           letterSpacing="0.02em"
           color={"#000000"}
-          sx={{ mt: "56px", mb: "48px", ml: "56px" }}
+          margin={"56px 0 48px 56px"}
+          sx={{ minWidth: "162px" }}
         >
           Test_Study
         </Typography>
