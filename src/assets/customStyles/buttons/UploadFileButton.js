@@ -9,7 +9,7 @@ const UploadFileButton = styled(Button)({
   boxShadow: "none",
   textTransform: "none",
   fontStyle: "Medium",
-  fontWeight: "500",
+  fontWeight: 500,
 
   fontSize: ".98rem",
   padding: "12px 40px",
