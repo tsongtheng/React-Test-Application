@@ -8,7 +8,7 @@ const CustomizedCheckbox = ({ checked }) => {
     <Checkbox
       sx={{ minWidth: "18.5px", margin: "2.75px 10.75px 2.75px 0" }}
       disableRipple
-      // checked={checked}
+      defaultChecked={checked}
       checkedIcon={<CheckedIcon />}
       icon={<CheckboxIcon />}
     />

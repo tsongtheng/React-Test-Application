@@ -2,14 +2,16 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import CustomizedCheckbox from "../../assets/customStyles/checkbox/AdditionalSettingsCheckbox";
 
-function Optionals() {
+function Optionals({ optionalsData }) {
+  const optionalsDataKeyValuePair = Object.entries(optionalsData);
+
   return (
     <Stack
       flexDirection={"row"}
       width={1508}
       height={108}
       borderRadius={"8px"}
-      margin={"0 56px 40px"}
+      margin={"0 56px 152px"}
       sx={{ backgroundColor: "#ffffff" }}
     >
       <Typography
@@ -26,7 +28,7 @@ function Optionals() {
       >
         Additional Settings
       </Typography>
-      {["optional1", "optional2"].map((value, index) => {
+      {optionalsDataKeyValuePair.map((value, index) => {
         return (
           <Stack
             flexDirection="row"
@@ -36,9 +38,7 @@ function Optionals() {
             // marginBottom="41.42px"
             sx={{ mr: index === 0 ? "48px" : 0 }}
           >
-            <CustomizedCheckbox
-            //  checked={value}
-            />
+            <CustomizedCheckbox checked={Boolean(value[1])} />
             <Typography
               variant="body1"
               fontSize={18}
@@ -50,8 +50,7 @@ function Optionals() {
               color={"#0F0F0F"}
               sx={{ minWidth: "80px" }}
             >
-              {value}
-              {/* Optional {index + 1} */}
+              {value[0]}
             </Typography>
           </Stack>
         );

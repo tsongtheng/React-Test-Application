@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 // import { string, randomStrings } from "../../randomString/randomString";
 
-function ChannelForm() {
+function ChannelForm({ channelData }) {
   const string = [
     "abcd",
     "ghhgj",
@@ -53,8 +53,8 @@ function ChannelForm() {
         color={"#0F0F0F"}
         margin={"39px 179px 40px 56px"}
       >
-        Channel1
-        {/* {channelData} */}
+        {/* Channel1 */}
+        {channelData}
       </Typography>
 
       <Stack

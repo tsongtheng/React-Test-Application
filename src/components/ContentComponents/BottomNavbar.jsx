@@ -8,7 +8,15 @@ import {
 
 function BottomNavbar() {
   return (
-    <Box width={"1620px"} height={"112px"} margin={0} backgroundColor="#ffffff">
+    <Box
+      width="1620px"
+      height="112px"
+      margin={0}
+      backgroundColor="#ffffff"
+      position="fixed"
+      bottom={0}
+      zIndex={999}
+    >
       <Stack
         // spacing={{}}
         direction={"row"}
