@@ -181,6 +181,28 @@ const UploadFileIcon = () => {
   );
 };
 
+const CheckboxIcon = () => {
+  return (
+    <svg
+      width="18.5"
+      height="18.5"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.3345 3.32715H7.66549C4.64449 3.32715 2.75049 5.46615 2.75049 8.49315V16.6611C2.75049 19.6881 4.63549 21.8271 7.66549 21.8271H16.3335C19.3645 21.8271 21.2505 19.6881 21.2505 16.6611V8.49315C21.2505 5.46615 19.3645 3.32715 16.3345 3.32715Z"
+        stroke="#C4C4C4"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
 export {
   ProfileIcon,
   ExpandIcon,
@@ -190,4 +212,5 @@ export {
   ProgressIndicatorNumber2,
   ProgressIndicatorNumber3,
   UploadFileIcon,
+  CheckboxIcon,
 };
