@@ -1,45 +1,31 @@
 import React from "react";
 import {
+  Box,
   Stack,
   Typography,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  Link,
+  // Link,
 } from "@mui/material";
-// import { string, randomStrings } from "../../randomString/randomString";
+import { AddBackupChannelsButton } from "../../assets/customStyles/buttons/AddBackupChannelsButton";
+import ChannelSelect from "./ChannelSelect";
 
-function ChannelForm({ channelData }) {
-  const string = [
-    "abcd",
-    "ghhgj",
-    "gfghfh",
-    "asdjg",
-    "asjgja",
-    "sduhgu",
-    "sjdhgkjh",
-    "dshgsd",
-    "sjhgds",
-    "sjdhghs",
-    "sdjhgk",
-    "sgheiu",
-  ];
-  const [selectChannel, setSelectChannel] = React.useState("");
-
-  const handleChange = (event) => {
-    setSelectChannel(event.target.value);
-  };
-
+function ChannelForm({
+  channelData,
+  handleAddClick,
+  addChannel,
+  onDelete,
+  noOfBackupChannel,
+}) {
   return (
     <Stack
       flexDirection={"row"}
       //   justifyContent={"space-between"}
       width={1508}
-      height={102}
-      borderRadius={"8px"}
-      margin={"0 56px 24px"}
-      sx={{ backgroundColor: "#ffffff" }}
+      minHeight={102}
+      borderRadius={!addChannel ? "8px" : "8px 8px 0 0"}
+      margin={0}
+      sx={{
+        backgroundColor: "#ffffff",
+      }}
     >
       <Typography
         variant="body1"
@@ -53,47 +39,14 @@ function ChannelForm({ channelData }) {
         color={"#0F0F0F"}
         margin={"39px 179px 40px 56px"}
       >
-        {/* Channel1 */}
         {channelData}
       </Typography>
+      <Box margin="24px 64px 24px 0">
+        <ChannelSelect />
+      </Box>
 
-      <Stack
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-        // margin="24px 96px 24px 194px"
-        sx={{ minWidth: 120 }}
-      >
-        {[1, 2].map((index) => (
-          <FormControl
-            fullWidth
-            key={index}
-            sx={{
-              width: "274px",
-              height: "54px",
-              backgroundColor: "#ffffff",
-              border: "1px solid",
-              borderColor: "#EAEAEA",
-              borderRadius: "4px",
-              marginTop: "24px",
-              marginBottom: "24px",
-              marginRight: index === 0 ? "104px" : "96px",
-            }}
-          >
-            <InputLabel>Select Channel</InputLabel>
-            <Select
-              value={selectChannel}
-              label="Select Channel"
-              onChange={handleChange}
-            >
-              {string.map((value, index) => {
-                return <MenuItem key={index}>{value}</MenuItem>;
-              })}
-            </Select>
-          </FormControl>
-        ))}
-      </Stack>
-      <Link
-        href="#"
+      {/* <Link
+        href=""
         width={"180px"}
         fontSize={16}
         fontStyle={"normal"}
@@ -104,8 +57,21 @@ function ChannelForm({ channelData }) {
         color={"#2F7EC7"}
         margin={"40px 242px 41px 0"}
       >
-        +Add Backup Channel
-      </Link>
+        +Add Backup Channels
+      </Link> */}
+
+      <AddBackupChannelsButton
+        onClick={handleAddClick}
+        variant="text"
+        disableRipple
+        sx={{ margin: "40px 242px 41px 0" }}
+      >
+        {addChannel
+          ? `Hide backup channels (${noOfBackupChannel})`
+          : noOfBackupChannel > 0
+          ? `View backup channels (${noOfBackupChannel})`
+          : "+ Add Backup Channels"}
+      </AddBackupChannelsButton>
     </Stack>
   );
 }

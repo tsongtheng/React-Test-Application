@@ -24,6 +24,7 @@ const sidebarItems = [
 ];
 
 const Sidebar = () => {
+  // const path = "Montages";
   return (
     <Box>
       <Drawer
@@ -78,20 +79,34 @@ const Sidebar = () => {
 
           <List disablePadding sx={{ color: "#ffffff" }}>
             {sidebarItems.map(({ id, icon, item }) => (
-              <ListItem
-                // disableGutters
-                disablePadding
+              <Box
                 key={id}
                 sx={{
-                  width: "133px",
-                  margin: "0 135px 48px 32px",
+                  display: "flex",
+                  flexWrap: "nowrap",
+                  height: "64px",
+                  width: "300px",
+                  ":hover": {
+                    backgroundColor: "rgba(44, 169, 227, 0.25)",
+                  },
                 }}
               >
+                <Box
+                  sx={{
+                    backgroundColor: id === 2 ? "#2CA9E3" : "transparent",
+                    flex: 8,
+                  }}
+                />
                 <ListItemButton
                   disableGutters
                   sx={{
                     pt: 0,
                     pb: 0,
+                    flex: 292,
+
+                    // backgroundColor:
+                    //   id === 2 ? "rgba(44, 169, 227, 0.25)" : "transparent",
+                    padding: "23px 0 23px 29px",
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: "24px", mr: "16px" }}>
@@ -110,7 +125,7 @@ const Sidebar = () => {
                     }}
                   />
                 </ListItemButton>
-              </ListItem>
+              </Box>
             ))}
           </List>
         </Box>
@@ -143,12 +158,6 @@ const Sidebar = () => {
               {value}
             </Typography>
           ))}
-          {/* <Typography fontSize={28} fontWeight={500}>
-            1,650
-          </Typography>
-          <Typography fontSize={16} fontWeight={500}>
-            Total Credits Available
-          </Typography> */}
         </Box>
       </Drawer>
     </Box>

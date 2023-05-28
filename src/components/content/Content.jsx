@@ -6,8 +6,11 @@ import ProgressIndicator from "../ContentComponents/ProgressIndicator";
 import BottomNavbar from "../ContentComponents/BottomNavbar";
 import ChannelHeader from "../ContentComponents/ChannelHeader";
 import ChannelForm from "../ContentComponents/ChannelForm";
-import Optionals from "../ContentComponents/Optionals";
+// import Optionals from "../ContentComponents/Optionals";
 import { getFormattedData } from "../../schemaData/schemaData";
+import BackupChannels from "../ContentComponents/BackupChannels";
+import ChannelFormComponent from "../ContentComponents/ChannelFormComponent";
+
 const Content = () => {
   const [channels, setChannels] = useState([]);
   const [optionals, setOptionals] = useState([]);
@@ -31,11 +34,18 @@ const Content = () => {
       <Header />
       <ProgressIndicator />
       <ChannelHeader />
+      {/* <ChannelFormComponent /> */}
+      {/* <ChannelForm />
+      <BackupChannels /> */}
 
       {channels.map((channel, index) => (
-        <ChannelForm key={index} channelData={channel} />
+        <ChannelFormComponent
+          key={index}
+          channelData={channel}
+          // sx={{ marginBottom: channel[channel.length] && "200px" }}
+        />
       ))}
-      <Optionals optionalsData={optionals} />
+      {/* <Optionals optionalsData={optionals} /> */}
       {/* <UploadFile /> */}
       <BottomNavbar />
     </Box>
