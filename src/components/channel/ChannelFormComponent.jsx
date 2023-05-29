@@ -55,7 +55,7 @@ const ChannelFormComponent = ({ channelData }) => {
       }
       setOnDelete(false);
     }
-  }, [onDelete]);
+  }, [onDelete, moreBackupChannel, moreBackupChannelPos]);
 
   return (
     <Stack

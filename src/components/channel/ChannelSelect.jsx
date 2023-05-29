@@ -88,18 +88,7 @@ const ChannelSelect = () => {
         >
           {stringPrimaryChannel.map((value, index) => {
             return (
-              <MenuItem
-                value={value}
-                key={index}
-                sx={{
-                  height: "22px",
-                  fontFamily: "inherit",
-                  fontWeight: 500,
-                  fontSize: "1rem",
-                  lineHeight: "21px",
-                  letterSpacing: 0,
-                }}
-              >
+              <MenuItem value={value} key={index}>
                 {value}
               </MenuItem>
             );

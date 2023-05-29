@@ -290,7 +290,6 @@ const DeleteIcon = () => {
         d="M15.625 4.375V16.25C15.625 16.4158 15.5592 16.5747 15.4419 16.6919C15.3247 16.8092 15.1658 16.875 15 16.875H5C4.83424 16.875 4.67527 16.8092 4.55806 16.6919C4.44085 16.5747 4.375 16.4158 4.375 16.25V4.375"
         stroke="#E03A3A"
         strokeWidth="1.5"
-        ProgressIndicatorTick
         strokeLinecap="round"
         strokeLinejoin="round"
       />
