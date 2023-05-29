@@ -8,7 +8,8 @@ const UploadFile = () => {
     <Box
       width={"1508px"}
       height="570px"
-      margin={"0 56px 40px"}
+      margin={"0 56px 152px"}
+      // margin={"0 56px 40px"}
       backgroundColor="#ffffff"
       borderRadius={"5.4px"}
     >

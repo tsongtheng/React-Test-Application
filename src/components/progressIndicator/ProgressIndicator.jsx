@@ -15,6 +15,7 @@ import {
   ProgressIndicatorNumber2,
   ProgressIndicatorNumber3,
 } from "../../assets/icons/ContentIcons";
+import { useMatch } from "react-router-dom";
 
 const ProgressIndicatorDescription = [
   "Upload EDFs",
@@ -22,6 +23,9 @@ const ProgressIndicatorDescription = [
   "Save & Preview",
 ];
 function ProgressIndicator() {
+  const isChannelPage = useMatch("/channels");
+  console.log("matches", isChannelPage);
+
   return (
     <Box
       width="1508px"

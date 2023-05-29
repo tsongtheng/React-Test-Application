@@ -4,9 +4,16 @@ import {
   BackButton,
   CancelMontageButton,
   NextButton,
-} from "../../assets/customStyles/buttons/BottomNavbarButtons";
+} from "../../../assets/customStyles/buttons/BottomNavbarButtons";
+import { useNavigate } from "react-router-dom";
 
 function BottomNavbar() {
+  const navigate = useNavigate();
+
+  const handleChannel = () => {
+    navigate("/channels");
+  };
+
   return (
     <Box
       width="1620px"
@@ -40,7 +47,12 @@ function BottomNavbar() {
           </CancelMontageButton>
         </Stack>
 
-        <NextButton variant="contained" disableRipple sx={{ letterSpacing: 0 }}>
+        <NextButton
+          onClick={handleChannel}
+          variant="contained"
+          disableRipple
+          sx={{ letterSpacing: 0 }}
+        >
           Next
         </NextButton>
       </Stack>

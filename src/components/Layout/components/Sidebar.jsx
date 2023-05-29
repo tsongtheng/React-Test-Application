@@ -15,7 +15,7 @@ import {
   DashboardIcon,
   MontagesIcon,
   CreditsIcon,
-} from "../../assets/icons/SidebarIcons";
+} from "../../../assets/icons/SidebarIcons";
 
 const sidebarItems = [
   { id: 1, icon: <DashboardIcon />, item: "Dashboard" },

@@ -181,6 +181,34 @@ const UploadFileIcon = () => {
   );
 };
 
+const ProgressIndicatorTick = () => {
+  return (
+    <svg
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="25"
+        cy="25"
+        r="24"
+        fill="#10A44B"
+        stroke="#10A44B"
+        strokeWidth="2"
+      />
+      <path
+        d="M34.8196 20.3125L23.169 31.6875L17.3438 26"
+        stroke="white"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
 const CheckboxIcon = () => {
   return (
     <svg
@@ -237,6 +265,7 @@ const DeleteIcon = () => {
         d="M15.625 4.375V16.25C15.625 16.4158 15.5592 16.5747 15.4419 16.6919C15.3247 16.8092 15.1658 16.875 15 16.875H5C4.83424 16.875 4.67527 16.8092 4.55806 16.6919C4.44085 16.5747 4.375 16.4158 4.375 16.25V4.375"
         stroke="#E03A3A"
         strokeWidth="1.5"
+        ProgressIndicatorTick
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -260,6 +289,7 @@ export {
   ProgressIndicatorNumber2,
   ProgressIndicatorNumber3,
   UploadFileIcon,
+  ProgressIndicatorTick,
   CheckboxIcon,
   DeleteIcon,
 };

@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { ProfileIcon, ExpandIcon } from "../../assets/icons/ContentIcons";
+import { ProfileIcon, ExpandIcon } from "../../../assets/icons/ContentIcons";
 
 function Header() {
   return (
