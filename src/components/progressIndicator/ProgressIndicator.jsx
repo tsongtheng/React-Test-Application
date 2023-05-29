@@ -10,10 +10,12 @@ import {
 } from "@mui/material";
 import {
   ProgressIndicatorIconGreen,
+  ProgressIndicatorIconGreen2,
   ProgressIndicatorIconGrey,
   ProgressIndicatorNumber1,
   ProgressIndicatorNumber2,
   ProgressIndicatorNumber3,
+  ProgressIndicatorTick,
 } from "../../assets/icons/ContentIcons";
 import { useMatch } from "react-router-dom";
 
@@ -24,7 +26,7 @@ const ProgressIndicatorDescription = [
 ];
 function ProgressIndicator() {
   const isChannelPage = useMatch("/channels");
-  console.log("matches", isChannelPage);
+  // console.log("matches", isChannelPage);
 
   return (
     <Box
@@ -46,10 +48,18 @@ function ProgressIndicator() {
         >
           <ListItem disablePadding sx={{ justifyContent: "space-between" }}>
             <ListItemIcon sx={{ minWidth: "50px" }}>
-              <ProgressIndicatorIconGreen />
+              {isChannelPage ? (
+                <ProgressIndicatorTick />
+              ) : (
+                <ProgressIndicatorIconGreen />
+              )}
             </ListItemIcon>
             <ListItemIcon sx={{ minWidth: "50px" }}>
-              <ProgressIndicatorIconGrey />
+              {isChannelPage ? (
+                <ProgressIndicatorIconGreen2 />
+              ) : (
+                <ProgressIndicatorIconGrey />
+              )}
             </ListItemIcon>
             <ListItemIcon sx={{ minWidth: "50px" }}>
               <ProgressIndicatorIconGrey />
@@ -74,10 +84,10 @@ function ProgressIndicator() {
         >
           <ListItem disablePadding sx={{ justifyContent: "space-between" }}>
             <ListItemIcon sx={{ minWidth: "7px" }}>
-              <ProgressIndicatorNumber1 />
+              {!isChannelPage && <ProgressIndicatorNumber1 />}
             </ListItemIcon>
             <ListItemIcon sx={{ minWidth: "7px" }}>
-              <ProgressIndicatorNumber2 />
+              {!isChannelPage && <ProgressIndicatorNumber2 />}
             </ListItemIcon>
             <ListItemIcon sx={{ minWidth: "7px" }}>
               <ProgressIndicatorNumber3 />
@@ -96,7 +106,8 @@ function ProgressIndicator() {
           variant="fullWidth"
           width="420px"
           sx={{
-            backgroundColor: "#C4C4C4",
+            backgroundColor: isChannelPage ? "#10A44B" : "#C4C4C4",
+            // backgroundColor: "#C4C4C4",
             borderWidth: ".5px",
           }}
         />
